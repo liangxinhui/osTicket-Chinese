@@ -1,7 +1,11 @@
 osTicket-Chinese
 ========
 
-基于osTicket 1.10 Release，针对中文使用环境进行了一些调整。
+[osTicket](https://osticket.com) 是一个开源、优秀的票务管理系统。
+
+但是在中文环境的使用上，有一些不足。
+
+这里基于[osTicket 1.10 Release](https://github.com/osTicket/osTicket/releases/download/v1.10/osTicket-v1.10.zip)，针对中文使用环境进行了一些调整。
 
 # 中文语言包
 
@@ -43,5 +47,8 @@ https://github.com/liangxinhui/osTicket-Chinese/commit/4ce5f4e4c35cef1722b0f7e12
 
 这里暂时修改为like的模式，对于数据量小的时候，凑合着用吧。如果哪位高手看到了，希望能优化下unicode文字的搜索算法。
 
-TODO: 将 [结巴中文分词](https://github.com/fxsjy/jieba) 应用过来。
+修改明细：
 
+https://github.com/liangxinhui/osTicket-Chinese/commit/38378cf8510aa10d9a22f9251bd87007849d71f5
+
+TODO: 将 [结巴中文分词](https://github.com/fxsjy/jieba) 应用过来。
