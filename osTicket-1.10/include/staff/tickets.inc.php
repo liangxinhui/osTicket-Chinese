@@ -143,10 +143,11 @@ case 'search':
         ) {
             // [Search] click, consider keywords
             $__tickets = $ost->searcher->find($q, $tickets);
-            if (!count($__tickets) && preg_match('`\w$`u', $q)) {
-                // Do wildcard search if no hits
-                $__tickets = $ost->searcher->find($q.'*', $tickets);
-            }
+            // search with like "%query%"  ----  not need to Do wildcard search if no hits
+            //   if (!count($__tickets) && preg_match('`\w$`u', $q)) {
+            //       // Do wildcard search if no hits
+            //       $__tickets = $ost->searcher->find($q.'*', $tickets);
+            //   }
             $tickets = $__tickets;
             $has_relevance = true;
         }

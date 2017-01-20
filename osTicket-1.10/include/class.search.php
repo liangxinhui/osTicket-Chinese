@@ -366,8 +366,18 @@ class MysqlSearchBackend extends SearchBackend {
         }
         #elseif (count(explode(' ', $query)) == 1)
         #    $mode = ' WITH QUERY EXPANSION';
-        $search = 'MATCH (Z1.title, Z1.content) AGAINST ('.db_input($query).$mode.')';
 
+        //change the line below:
+        //$search = 'MATCH (Z1.title, Z1.content) AGAINST ('.db_input($query).$mode.')';
+
+
+        // search with like "%query%"  ---- begin
+        $query_like = $query;
+        // replace " " to %
+        $query_like = preg_replace('/([ ]+)/m', '%', $query_like);
+        error_log("search:".$search);
+        $search = '(Z1.title like \'%'.$query_like.'%\' or Z1.content like \'%'.$query_like.'%\')';
+        // search with like "%query%"  ---- end
         switch ($criteria->model) {
         case false:
         case 'TicketModel':
